@@ -2,4 +2,3 @@
 <p class="italic text-xl">
     Visit <a class="text-blue-600" href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
 </p>
-<button class="btn w-64 rounded-full" data-toggle-theme="night,winter" data-act-class="ACTIVECLASS">Change Theme</button>
