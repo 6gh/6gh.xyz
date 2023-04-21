@@ -12,7 +12,7 @@
 		"lint": "prettier --plugin-search-dir . --check .",
 		"format": "prettier --plugin-search-dir . --write .",
 		"deploy": "gh-pages -d build -t true",
-		"gh-pages": "npm run build && npm run deploy"
+		"gh-pages": "npm run build && echo 6gh.xyz > ./build/CNAME && npm run deploy"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
