@@ -1,13 +1,13 @@
-<footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
+<footer class="footer footer-center p-10 bg-base-200 text-base-content rounded mt-auto">
     <div class="grid grid-flow-col gap-4">
         <a href="/contact" class="link link-hover">Contact</a>
         <a href="/credits" class="link link-hover">Credits</a>
-        <a href="/github" class="link link-hover">Source Code</a>
+        <a href="https://github.com/6gh/6gh.xyz" class="link link-hover">Source Code</a>
     </div>
     <div>
         <div class="grid grid-flow-col gap-4">
             <!-- twitter -->
-            <a href="https://twitter.com/6ghmid"
+            <a href="https://twitter.com/6ghmid" target="_blank"
                 ><svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -21,7 +21,7 @@
             >
 
             <!-- youtube -->
-            <a href="https://www.youtube.com/@6gh"
+            <a href="https://www.youtube.com/@6gh" target="_blank"
                 ><svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
