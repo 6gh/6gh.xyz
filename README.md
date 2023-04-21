@@ -1,38 +1,20 @@
-# create-svelte
+# [6gh.xyz](https://6gh.xyz)
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+[![pages-build-deployment](https://github.com/6gh/6gh.xyz/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/6gh/6gh.xyz/actions/workflows/pages/pages-build-deployment)
 
-## Creating a project
+This is the repository for my website. The entire source code can be found here for it.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Credits
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+This site was built using [SvelteKit](https://kit.svelte.dev/), [TailwindCSS](https://tailwindcss.com/), [DaisyUI](https://daisyui.com/), [change-theme](https://github.com/saadeghi/theme-change), and [Github Pages](https://pages.github.com/).
 
 ## Building
 
-To create a production version of your app:
+This project uses a combination of [@sveltejs/adapter-static](https://github.com/sveltejs/kit/tree/master/packages/adapter-static) and [gh-pages](https://www.npmjs.com/package/gh-pages) to create a static page version of the website, and publish it to Github Pages
 
+If you want to build the website for yourself, simply run to build a static page version in the `build` folder.
 ```bash
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+You can also preview the production build with `npm run preview`.
