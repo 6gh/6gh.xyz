@@ -1,0 +1,1 @@
+import{M as t}from"./MIDIsInfo.e13e6bfb.js";import{H as n}from"./control.e7f5239e.js";function i(o,r){return new n(o,r)}new TextEncoder;const d=({params:o})=>{let r=t.find(e=>e.id===o.midiId);if(r)return{props:{midi:r}};throw i(404,"MIDI not found")},f=Object.freeze(Object.defineProperty({__proto__:null,load:d},Symbol.toStringTag,{value:"Module"}));export{f as _,d as l};
