@@ -6,8 +6,7 @@ export default {
             backgroundImage: {
                 'hero-primary': 'url("/images/bg-primary.jpg")',
                 'hero-secondary': 'url("/images/bg-secondary.jpg")',
-                'hero-error-404': 'url("/images/error-404.png")',
-                'hero-error-other': 'url("/images/other-error.png")',
+                'hero-error': 'url("/images/bg-error.png")',
             }
         },
     },

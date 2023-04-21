@@ -8,7 +8,7 @@
 </svelte:head>
 
 <!-- hero banner -->
-<div class="hero bg-hero-error-other" data-theme="night">
+<div class="hero bg-hero-error" data-theme="night">
     <div class="hero-overlay bg-opacity-80" />
     <div class="hero-content">
         <div class="py-64 text-center text-white">
