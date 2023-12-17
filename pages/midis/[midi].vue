@@ -14,10 +14,12 @@ async function copyURL(t: string) {
         tooltipMsg.value = "Failed to copy!";
     }
 }
+
+const image = useCdn("/images/midis/" + midi.id + '.jpg');
 </script>
 
 <template>
-    <PageHeader :title="midi.name" :image="'/images/midis/' + midi.id + '.jpg'">
+    <PageHeader :title="midi.name" :image="image">
         <div v-if="midi.badges">
             <div v-for="badge in midi.badges" class="tooltip tooltip-bottom px-1" :data-tip="badge.hoverText">
                 <span v-if="badge.color === 'primary'" class="badge badge-primary">{{ badge.text }}</span>

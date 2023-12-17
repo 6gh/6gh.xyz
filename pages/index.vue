@@ -1,6 +1,10 @@
+<script setup lang="ts">
+const bgPrimary = useCdn("/images/bg-primary.jpg");
+</script>
+
 <template>
     <div>
-        <HeroBanner />
+        <HeroBanner :image="bgPrimary" />
         <SectionAbout />
         <div class="divider w-11/12 mx-auto" />
         <SectionProjects />

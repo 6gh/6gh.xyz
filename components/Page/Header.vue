@@ -9,7 +9,7 @@ defineProps({
         required: false,
         default: "/images/bg-secondary.jpg"
     }
-})
+});
 </script>
 
 <template>

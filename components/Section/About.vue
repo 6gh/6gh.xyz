@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const avatarUrl = useCdn("/avatar.png");
+</script>
+
 <template>
     <section id="about" class="text-center py-16 flex flex-col justify-center items-center space-y-12">
         <h1 class="text-4xl font-bold">About Me</h1>
@@ -5,7 +9,7 @@
             <div class="space-y-4">
                 <div class="avatar">
                     <div class="w-36 rounded-full">
-                        <img src="/avatar.png" />
+                        <img :src="avatarUrl" />
                     </div>
                 </div>
                 <p class="text-4xl">

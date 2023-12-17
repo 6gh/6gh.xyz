@@ -25,4 +25,9 @@ export default defineNuxtConfig({
     },
   },
   ssr: true,
+  runtimeConfig: {
+    public: {
+      baseUrl: process.env.CDN_URL || "http://localhost:3000",
+    },
+  },
 });

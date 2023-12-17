@@ -1,11 +1,29 @@
 <script setup lang="ts">
 defineProps({
-    name: String,
-    description: String,
-    image: String,
-    link: String,
-    linkText: String,
-    icon: String,
+    name: {
+        type: String,
+        required: true,
+    },
+    description: {
+        type: String,
+        required: true,
+    },
+    image: {
+        type: String,
+        required: false,
+    },
+    link: {
+        type: String,
+        required: true,
+    },
+    linkText: {
+        type: String,
+        required: true,
+    },
+    icon: {
+        type: String,
+        required: false,
+    },
 })
 </script>
 
