@@ -7,7 +7,6 @@ const { image } = defineProps({
     image: {
         type: String,
         required: false,
-        default: "/images/bg-secondary.jpg"
     }
 });
 const imageUrl = image ?? useCdn("/images/bg-secondary.jpg");
