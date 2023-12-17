@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps({
+const { image } = defineProps({
     title: {
         type: String,
         required: true
@@ -10,10 +10,11 @@ defineProps({
         default: "/images/bg-secondary.jpg"
     }
 });
+const imageUrl = image ?? useCdn("/images/bg-secondary.jpg");
 </script>
 
 <template>
-    <header class="hero" :style="'background-image: url(' + image + ');'">
+    <header class="hero" :style="'background-image: url(' + imageUrl + ');'">
         <div class="hero-overlay bg-opacity-60"></div>
         <div class="hero-content text-center text-5xl font-bold my-8 flex-col">
             {{ title }}
