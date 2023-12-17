@@ -1,3 +1,7 @@
+import { setup } from '@storybook/vue3';
+import { action } from "@storybook/addon-actions";
+import '../assets/css/tailwind.css';
+
 /** @type { import('@storybook/vue3').Preview } */
 const preview = {
   parameters: {
@@ -10,5 +14,22 @@ const preview = {
     },
   },
 };
+
+setup((app) => {
+  app.component("NuxtLink", {
+    props: {
+      to: {
+        type: String,
+        required: true,
+      },
+    },
+    methods: {
+      log() {
+        action("link target")(this.to);
+      },
+    },
+    template: '<a @click="log"><slot></slot></a>',
+  });
+})
 
 export default preview;
