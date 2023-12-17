@@ -13,7 +13,7 @@ defineProps({
     <div class="card bg-base-100 shadow-xl image-full">
         <figure>
             <img v-if="image" class="max-w-xs" :src="image" :alt="name" />
-            <Icon v-if="icon" :name="icon" class="inline-block w-full h-full" />
+            <Icon v-else-if="icon" :name="icon" class="inline-block w-full h-full" />
         </figure>
         <div class="card-body">
             <h2 class="card-title">{{ name }}</h2>

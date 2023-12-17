@@ -27,8 +27,8 @@ const props = defineProps<{
 
             <div class="card-actions justify-stretch">
                 <div class="join">
-                    <NuxtLink v-if="Object.values(props.midi.versions)[0].download_link"
-                        :to="Object.values(props.midi.versions)[0].download_link" class="btn btn-md join-item btn-primary">
+                    <NuxtLink v-if="!midi.missing" :to="Object.values(props.midi.versions)[0].download_link"
+                        class="btn btn-md join-item btn-primary">
                         Download
                     </NuxtLink>
                     <NuxtLink :to="'/midis/' + midi.id" class="btn btn-md join-item btn-secondary">More Info</NuxtLink>
