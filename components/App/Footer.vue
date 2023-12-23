@@ -5,27 +5,26 @@ const discordModal = ref<HTMLDialogElement | null>(null);
 <template>
     <footer class="w-screen h-40 flex flex-col justify-evenly items-center bg-base-300">
         <div class="flex space-x-4">
-            <NuxtLink to="/privacy" class="link link-hover" v-umami="'footer-link-click-contact'">
+            <NuxtLink to="/privacy" class="link link-hover">
                 Privacy
             </NuxtLink>
-            <NuxtLink to="/contact" class="link link-hover" v-umami="'footer-link-click-contact'">
+            <NuxtLink to="/contact" class="link link-hover">
                 Contact
             </NuxtLink>
-            <NuxtLink to="/credits" class="link link-hover" v-umami="'footer-link-click-credits'">
+            <NuxtLink to="/credits" class="link link-hover">
                 Credits
             </NuxtLink>
-            <NuxtLink to="https://github.com/6gh/6gh.xyz" class="link link-hover" target="_blank"
-                v-umami="'footer-link-click-source'">
+            <NuxtLink to="https://github.com/6gh/6gh.xyz" class="link link-hover" target="_blank">
                 Source Code
                 <Icon name="pajamas:external-link" class="inline-block w-4 h-4" />
             </NuxtLink>
         </div>
 
         <div class="flex space-x-8">
-            <NuxtLink to="https://x.com/6ghmid" v-umami="'footer-link-click-x'">
+            <NuxtLink to="https://x.com/6ghmid">
                 <Icon name="pajamas:x" class="inline-block w-6 h-6" />
             </NuxtLink>
-            <NuxtLink to="https://youtube.com/@6gh" v-umami="'footer-link-click-yt'">
+            <NuxtLink to="https://youtube.com/@6gh">
                 <Icon name="mdi:youtube" class="inline-block w-7 h-7" />
             </NuxtLink>
             <Icon name="pajamas:discord" class="inline-block w-6 h-6 mt-[2px] cursor-pointer"

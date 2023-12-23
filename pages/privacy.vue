@@ -1,14 +1,16 @@
 <template>
     <PageHeader title="Privacy Policy" />
 
-    <AlertNormal id="updated">
-        <div>
-            Updated:
-            <div class="inline-block tooltip" data-tip="MM/DD/YYYY">12/17/2023</div>
-        </div>
-    </AlertNormal>
+    <section class="flex justify-center items-center w-full">
+        <AlertNormal id="updated" class="xl:w-8/12 lg:w-10/12 md:11/12">
+            <div>
+                Updated:
+                <div class="inline-block tooltip" data-tip="MM/DD/YYYY">12/17/2023</div>
+            </div>
+        </AlertNormal>
+    </section>
 
-    <section class="w-8/12 flex flex-col justify-center text-start mx-auto space-y-4 mb-16">
+    <section class="xl:w-8/12 lg:w-10/12 md:11/12 px-6 flex flex-col justify-center text-start mx-auto space-y-4 mb-16">
         <h2 class="text-2xl font-bold">
             Introduction
         </h2>

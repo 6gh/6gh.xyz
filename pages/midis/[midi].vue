@@ -30,7 +30,7 @@ const image = useCdn("/images/midis/" + midi.id + '.jpg');
         </div>
     </PageHeader>
 
-    <section>
+    <section class="xl:w-8/12 lg:w-10/12 md:11/12 mx-auto">
         <AlertNormal>
             <div>
                 <h2 class="text-2xl font-bold">
@@ -43,7 +43,7 @@ const image = useCdn("/images/midis/" + midi.id + '.jpg');
         </AlertNormal>
     </section>
 
-    <section class="w-8/12 mx-auto bg-base-200 mb-16">
+    <section class="xl:w-8/12 lg:w-10/12 md:11/12 mx-auto bg-base-200 mb-16 overflow-hidden">
         <TableBase :column-names="['', 'Authors', 'Notes', 'Size', 'Links']">
             <TableRow v-for="[version, { authors, notes, size, download_link }] in Object.entries(midi.versions)">
                 <TableCell :ends="true">

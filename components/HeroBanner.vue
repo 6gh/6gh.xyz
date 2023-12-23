@@ -16,8 +16,8 @@ defineProps({
         <p class="mb-5 text-xl">Welcome to 6gh's Main Website! Here you can find downloads to my MIDIs, contact
           information, and more!</p>
         <div class="join">
-          <NuxtLink to="/midis" class="btn btn-primary join-item" v-umami="'hero-btn-click-midis'">MIDIs</NuxtLink>
-          <NuxtLink to="/contact" class="btn btn-secondary join-item" v-umami="'hero-btn-click-contact'">Contact
+          <NuxtLink to="/midis" class="btn btn-primary join-item">MIDIs</NuxtLink>
+          <NuxtLink to="/contact" class="btn btn-secondary join-item">Contact
           </NuxtLink>
         </div>
       </div>
