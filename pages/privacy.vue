@@ -1,5 +1,17 @@
+<script setup lang="ts">
+const appConfig = useAppConfig();
+const title = "Privacy Policy";
+
+useSeoMeta({
+    title: `${title} - ${appConfig.title}`,
+    ogTitle: `${title} - ${appConfig.title}`,
+    description: "Privacy policy for " + appConfig.title + ".",
+    ogDescription: "Privacy policy for " + appConfig.title + ".",
+})
+</script>
+
 <template>
-    <PageHeader title="Privacy Policy" />
+    <PageHeader :title="title" />
 
     <section class="flex justify-center items-center w-full">
         <AlertNormal id="updated" class="xl:w-8/12 lg:w-10/12 md:11/12">

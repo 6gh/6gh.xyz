@@ -1,9 +1,18 @@
 <script setup lang="ts">
 import { MIDIs as midis } from "~/assets/midis";
+const appConfig = useAppConfig();
+const title = "MIDI Downloads"
+
+useSeoMeta({
+    title: `${title} - ${appConfig.title}`,
+    ogTitle: `${title} - ${appConfig.title}`,
+    description: "A list of my MIDI files available for download",
+    ogDescription: "A list of my MIDI files available for download",
+})
 </script>
 
 <template>
-    <PageHeader title="MIDI Downloads" />
+    <PageHeader :title="title" />
 
     <section class="xl:w-8/12 lg:w-10/12 md:11/12 lg:mx-auto mx-4">
         <AlertInfo>

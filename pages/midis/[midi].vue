@@ -4,8 +4,17 @@ import type { MIDI } from "~/assets/midis";
 
 const midiId = useRoute().params.midi as string;
 const midi = MIDIs.find(x => x.id === midiId) as MIDI;
-const tooltipMsg = ref("Copy URL to clipboard");
 
+const appConfig = useAppConfig();
+const maxLen = 160;
+useSeoMeta({
+    title: `${midi.name} - ${appConfig.title}`,
+    ogTitle: `${midi.name} - ${appConfig.title}`,
+    description: `${midi.description.length > maxLen ? midi.description.substring(0, maxLen - 3) + "..." : midi.description}`,
+    ogDescription: `${midi.description.length > maxLen ? midi.description.substring(0, maxLen - 3) + "..." : midi.description}`,
+})
+
+const tooltipMsg = ref("Copy URL to clipboard");
 async function copyURL(t: string) {
     try {
         await navigator.clipboard.writeText(t);
@@ -14,6 +23,7 @@ async function copyURL(t: string) {
         tooltipMsg.value = "Failed to copy!";
     }
 }
+
 
 const image = useCdn("/images/midis/" + midi.id + '.jpg');
 </script>
