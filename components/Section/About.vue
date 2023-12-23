@@ -5,7 +5,8 @@ const avatarUrl = useCdn("/avatar.png");
 <template>
     <section id="about" class="text-center py-16 flex flex-col justify-center items-center space-y-12">
         <h1 class="text-4xl font-bold">About Me</h1>
-        <div class="w-8/12 h-96 grid grid-cols-3 grid-rows-1 justify-center items-center">
+        <div
+            class="w-auto xl:w-11/12 2xl:w-8/12 sm:grid-cols-1 sm:grid-rows-2 lg:grid-cols-3 lg:grid-rows-1 h-auto grid justify-center items-center">
             <div class="space-y-4">
                 <div class="avatar">
                     <div class="w-36 rounded-full">
@@ -19,8 +20,8 @@ const avatarUrl = useCdn("/avatar.png");
                     Black MIDI Dilettante, Developer, Self-Hosting Enthusiast
                 </p>
             </div>
-            <div class="col-span-2 chat chat-start flex flex-col justify-center items-center">
-                <div class="chat-bubble text-xl">
+            <div class="lg:col-span-2 lg:pt-0 pt-8 chat chat-start flex flex-col justify-center items-center">
+                <div class="chat-bubble lg:text-xl text-md">
                     Hey, I'm 6gh! Pronounced "six-gee-aitch", but you can call me "six" for short.<br><br>
 
                     You probably know me from my YouTube channel, where I upload videos of me playing Black MIDIs. I've been

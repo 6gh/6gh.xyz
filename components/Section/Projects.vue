@@ -5,7 +5,7 @@ const bgSecondary = useCdn("/images/bg-secondary.jpg"),
 </script>
 
 <template>
-    <section class="w-8/12 mx-auto">
+    <section class="2xl:w-8/12 w-auto mx-auto">
         <SectionProject description="Get a list of all of my publicly available MIDIs and downloads to all of them!"
             title="Black MIDIs" link-text="Check it out!" link-url="/midis" :image-url="bgSecondary" :reversed="false" />
         <div class="divider" />

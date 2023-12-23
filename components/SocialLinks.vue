@@ -1,6 +1,6 @@
 <template>
     <!-- social media -->
-    <div class="p-8 mx-auto bg-base-200 rounded-xl text-center w-11/12 my-8">
+    <div class="p-2 md:p-8 mx-auto bg-base-200 rounded-xl text-center w-full sm:w-11/12 my-8">
         <h1 class="text-4xl">Social Links</h1>
         <p class="text-xl pt-2 pb-8">Here are links to some of my social media</p>
 

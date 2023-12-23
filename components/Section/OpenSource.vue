@@ -1,6 +1,7 @@
 <template>
-    <section class="w-8/12 pt-4 pb-24 flex flex-col justify-center items-center mx-auto space-y-8">
-        <h1 class="text-4xl font-bold">
+    <section
+        class="w-auto xl:w-11/12 2xl:w-8/12 pt-4 pb-24 flex flex-col justify-center items-center lg:mx-auto mx-4 space-y-8">
+        <h1 class="text-4xl font-bold whitespace-nowrap">
             Open Source
             <Icon name="logos:opensource" class="inline-block w-12 h-12"></Icon>
         </h1>

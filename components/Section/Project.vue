@@ -14,9 +14,9 @@ defineProps({
 
 <template>
     <div class="hero w-full mx-auto">
-        <div class="hero-content w-full flex-col justify-start"
-            :class="[reversed ? 'lg:flex-row-reverse lg:text-end' : 'lg:flex-row']">
-            <img :src="imageUrl" class=" max-w-xs rounded-lg shadow-2xl" />
+        <div class="hero-content w-full min-w-0 flex flex-col justify-start text-center"
+            :class="[reversed ? 'lg:flex-row-reverse lg:text-end' : 'lg:flex-row lg:text-start']">
+            <img :src="imageUrl" class="max-w-xs rounded-lg shadow-2xl" />
             <div>
                 <h1 class="text-5xl font-bold">{{ title }}</h1>
                 <p class="py-6">{{ description }}</p>

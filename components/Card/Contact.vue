@@ -20,7 +20,7 @@ defineProps({
 </script>
 
 <template>
-    <div class="card w-96 bg-base-200 border border-transparent hover:border-primary transition-all shadow-xl">
+    <div class="card min-w-min w-96 bg-base-200 border border-transparent hover:border-primary transition-all shadow-xl">
         <div class="card-body text-center justify-center items-center space-y-2">
             <slot />
             <h2 class="card-title">{{ title }}</h2>

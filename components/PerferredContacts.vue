@@ -1,5 +1,6 @@
 <template>
-    <div class="w-8/12 flex justify-evenly items-center py-8 mx-auto">
+    <div
+        class="lg:w-8/12 sm:w-11/12 w-full flex flex-col md:flex-row justify-evenly space-y-8 md:space-y-0 md:space-x-8 items-center py-8 mx-auto">
         <CardContact title="Discord" subtitle="The absolute best way contact me is through Discord. Friend request and DM me on Discord if you want to
                 contact me. Or click the button below to join my Discord Server." link="https://u.6gh.xyz/discord"
             buttonText="Join Server">
