@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   },
   colorMode: {
     preference: "system", // default theme
+    fallback: "main", // fallback theme
     dataValue: "theme", // activate data-theme in <html> tag
     classSuffix: "",
   },

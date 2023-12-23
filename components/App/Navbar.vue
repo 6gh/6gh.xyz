@@ -54,7 +54,7 @@ const colorMode = useColorMode();
 
         <div class="navbar-end">
             <div class="dropdown dropdown-end">
-                <div tabindex="0" role="button" class="btn">
+                <div tabindex="0" role="button" class="btn btn-ghost">
                     Theme
                 </div>
                 <ul tabindex="0" class="dropdown-content z-[1] p-2 shadow-2xl bg-base-300 rounded-box w-52">
@@ -68,10 +68,19 @@ const colorMode = useColorMode();
                     <li><input v-umami="'theme-change-night'" v-model="colorMode.preference" type="radio"
                             name="theme-dropdown" class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
                             aria-label="Night" value="night" /></li>
-                    <div class="divider divider-start">Light</div>
-                    <li><input v-umami="'theme-change-corporate'" v-model="colorMode.preference" type="radio"
+                    <li><input v-umami="'theme-change-amoled'" v-model="colorMode.preference" type="radio"
                             name="theme-dropdown" class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-                            aria-label="Corporate" value="corporate" /></li>
+                            aria-label="AMOLED" value="amoled" /></li>
+                    <div class="divider divider-start">Light</div>
+                    <li><input v-umami="'theme-change-light'" v-model="colorMode.preference" type="radio"
+                            name="theme-dropdown" class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+                            aria-label="Light" value="light" /></li>
+                    <li><input v-umami="'theme-change-autumn'" v-model="colorMode.preference" type="radio"
+                            name="theme-dropdown" class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+                            aria-label="Autumn" value="autumn" /></li>
+                    <li><input v-umami="'theme-change-nord'" v-model="colorMode.preference" type="radio"
+                            name="theme-dropdown" class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+                            aria-label="Nord" value="nord" /></li>
                 </ul>
             </div>
         </div>

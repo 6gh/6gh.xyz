@@ -3,7 +3,7 @@ const discordModal = ref<HTMLDialogElement | null>(null);
 </script>
 
 <template>
-    <footer class="w-screen h-40 bg-base-300 flex flex-col justify-evenly items-center">
+    <footer class="w-screen h-40 flex flex-col justify-evenly items-center bg-base-300">
         <div class="flex space-x-4">
             <NuxtLink to="/privacy" class="link link-hover" v-umami="'footer-link-click-contact'">
                 Privacy

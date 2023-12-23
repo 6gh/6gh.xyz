@@ -15,8 +15,10 @@ const imageUrl = image ?? useCdn("/images/bg-secondary.jpg");
 <template>
     <header class="hero" :style="'background-image: url(' + imageUrl + ');'">
         <div class="hero-overlay bg-opacity-60"></div>
-        <div class="hero-content text-center text-5xl font-bold my-8 flex-col">
-            {{ title }}
+        <div class="hero-content text-center my-8 flex-col">
+            <span data-theme="main" class="bg-transparent text-5xl font-bold">
+                {{ title }}
+            </span>
             <slot />
         </div>
     </header>
