@@ -32,8 +32,11 @@ const discordModal = ref<HTMLDialogElement | null>(null);
             <dialog class="modal modal-bottom sm:modal-middle" ref="discordModal">
                 <div class="modal-box">
                     <h3 class="font-bold text-lg">Discord Contact</h3>
-                    <p class="py-4">My Discord is <span class="font-bold underline">@6gh</span> (or 6gh#7369 for legacy
-                        usernames)<br>You are free to DM me and send a friend request at any time.</p>
+                    <p class="py-4">
+                        My Discord is
+                        <span class="font-bold underline">@6gh</span>
+                        (or 6gh#7369 for legacy usernames). You are free to DM me and send a friend request at any time.
+                    </p>
                     <div class="modal-action">
                         <form method="dialog">
                             <button class="btn">Close</button>

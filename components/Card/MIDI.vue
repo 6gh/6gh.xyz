@@ -14,8 +14,8 @@ const props = defineProps<{
             <span class="italic text-secondary text-base">{{ midi.date }}</span>
             <h1 class="card-title">{{ midi.name }}</h1>
             <p class="card-text">{{ midi.description.length > 80
-                ? midi.description.substring(0, 77) + "..."
-                : midi.description }}</p>
+            ? midi.description.substring(0, 77) + "..."
+            : midi.description }}</p>
             <div v-if="midi.badges" class="badge-actions justify-start">
                 <div v-for="badge in midi.badges" class="tooltip" :data-tip="badge.hoverText">
                     <span v-if="badge.color === 'primary'" class="badge badge-primary">{{ badge.text }}</span>
@@ -31,7 +31,8 @@ const props = defineProps<{
                         class="btn btn-md join-item btn-primary grow">
                         Download
                     </NuxtLink>
-                    <NuxtLink :to="'/midis/' + midi.id" class="btn btn-md grow join-item btn-secondary">More Info</NuxtLink>
+                    <NuxtLink :to="'/midis/' + midi.id" class="btn btn-md grow join-item btn-secondary">More Info
+                    </NuxtLink>
                 </div>
             </div>
         </div>
