@@ -31,4 +31,15 @@ export default defineNuxtConfig({
       baseUrl: process.env.CDN_URL || "http://localhost:3000",
     },
   },
+  app: {
+    head: {
+      link: [
+        {
+          rel: "icon",
+          type: "image/png",
+          href: "/favicon.png",
+        },
+      ],
+    },
+  },
 });
