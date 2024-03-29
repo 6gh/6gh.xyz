@@ -7,34 +7,23 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "postinstall": "nuxt prepare"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "@nuxtjs/color-mode": "^3.3.2",
-    "@nuxtjs/tailwindcss": "^6.10.1",
-    "@storybook/addon-essentials": "7.6.5",
-    "@storybook/addon-interactions": "7.6.5",
-    "@storybook/addon-links": "7.6.5",
-    "@storybook/addon-postcss": "^2.0.0",
-    "@storybook/blocks": "7.6.5",
-    "@storybook/test": "7.6.5",
-    "@storybook/vue3": "7.6.5",
-    "@storybook/vue3-vite": "7.6.5",
-    "autoprefixer": "^10.4.16",
-    "daisyui": "^4.4.20",
-    "nuxt": "^3.8.2",
-    "nuxt-icon": "^0.6.7",
-    "postcss": "^8.4.32",
+    "@nuxtjs/color-mode": "^3.3.3",
+    "@nuxtjs/tailwindcss": "^6.11.4",
+    "autoprefixer": "^10.4.19",
+    "daisyui": "^4.9.0",
+    "nuxt": "^3.11.1",
+    "nuxt-icon": "^0.6.10",
+    "postcss": "^8.4.38",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "storybook": "7.6.5",
-    "vue": "^3.3.10",
-    "vue-router": "^4.2.5"
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0"
   },
   "dependencies": {
-    "nuxt-umami": "^2.5.5"
+    "nuxt-umami": "^2.6.0"
   }
 }
