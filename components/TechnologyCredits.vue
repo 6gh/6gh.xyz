@@ -25,12 +25,14 @@ const [
 </script>
 
 <template>
-    <section class="xl:w-8/12 lg:w-10/12 md:11/12 px-6 mx-auto flex flex-col justify-center items-center py-8 space-y-4">
+    <section
+        class="xl:w-8/12 lg:w-10/12 md:11/12 px-6 mx-auto flex flex-col justify-center items-center py-8 space-y-4">
         <h1 class="text-5xl font-bold text-center">
             Technologies Used
         </h1>
         <p class="text-xl pb-12 text-center">
-            This website was built using the following technologies. All of which are open source and free to use. I thank
+            This website was built using the following technologies. All of which are open source and free to use. I
+            thank
             the creators of these technologies for making my life easier.
         </p>
 
@@ -46,12 +48,6 @@ const [
                 :image="TailwindImg" link="https://tailwindcss.com/" linkText="Learn More" />
             <TechnologyCredit name="Daisy UI" description="Daisy UI is a component library for Tailwind CSS."
                 :image="DaisyUIImg" link="https://daisyui.com/" linkText="Learn More" />
-            <TechnologyCredit name="Storybook"
-                description="Storybook is a frontend workshop for building UI components and pages in isolation. Thousands of teams use it for UI development, testing, and documentation. It's open source and free."
-                :image="StorybookImg" link="https://storybook.js.org/" linkText="Learn More" />
-            <TechnologyCredit name="Nuxt Devtools"
-                description="Nuxt DevTools is a set of visual tools that help you to know your app better. "
-                :image="NuxtDevtoolsImg" link="https://github.com/nuxt/devtools" linkText="Learn More" />
             <TechnologyCredit name="Nuxt Color Mode"
                 description="🌑 Dark and 🌕 Light mode with auto detection made easy with Nuxt. Change themes easily, with lifecycle support."
                 :image="NuxtColorModeImg" link="https://github.com/nuxt-modules/color-mode" linkText="Learn More" />
