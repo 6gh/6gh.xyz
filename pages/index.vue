@@ -1,6 +1,12 @@
 <script setup lang="ts">
-const bgPrimary = useCdn("/images/bg-primary.jpg");
+const bgtemp1 = useCdn("/images/temp1.jpg");
+const bgtemp2 = useCdn("/images/temp2.jpg");
+const bgtemp3 = useCdn("/images/temp3.jpg");
+const bgMidis = useCdn("/images/bg-primary.jpg");
+const bgtemp4 = useCdn("/images/temp4.jpg");
+
 const currentPage = ref("0");
+const currentImage = ref(bgtemp1)
 
 const homeLinkText = ref("Home");
 const aboutLinkText = ref("About");
@@ -19,17 +25,22 @@ function onLinkHovered(pageNumber: string, event: MouseEvent) {
         return;
     }
 
-    let text = (() => {
+    const text = (() => {
         switch (pageNumber) {
             case '0':
+                currentImage.value = bgtemp1
                 return homeLinkText;
             case '1':
+                currentImage.value = bgtemp2
                 return aboutLinkText;
             case '2':
+                currentImage.value = bgtemp3
                 return contactLinkText;
             case '3':
+                currentImage.value = bgMidis
                 return midisLinkText;
             case '4':
+                currentImage.value = bgtemp4
                 return projectsLinkText;
             default:
                 return homeLinkText;
@@ -79,10 +90,41 @@ function onLinkHovered(pageNumber: string, event: MouseEvent) {
 definePageMeta({
     layout: 'footer-only'
 })
+
+// <link rel="preload" :href="src" as="image"/>
+useHead({
+    link: [
+        {
+            href: bgtemp1,
+            rel: "preload",
+            as: "image",
+        },
+        {
+            href: bgtemp2,
+            rel: "preload",
+            as: "image",
+        },
+        {
+            href: bgtemp3,
+            rel: "preload",
+            as: "image",
+        },
+        {
+            href: bgMidis,
+            rel: "preload",
+            as: "image",
+        },
+        {
+            href: bgtemp4,
+            rel: "preload",
+            as: "image",
+        },
+    ],
+});
 </script>
 
 <template>
-    <div class="w-screen h-screen grid grid-cols-2">
+    <div class="w-screen h-screen grid grid-cols-2 overflow-hidden">
         <div class="w-full h-full flex flex-col justify-center px-52">
             <ul class="w-fit h-fit text-6xl flex flex-col group nav-links" :group-hover:data-index="currentPage">
                 <li data-text="Home" @mouseenter="onLinkHovered('0', $event)" class="py-4">
@@ -138,7 +180,7 @@ definePageMeta({
                                 return 'bg-[position:0%_0%]';
                         }
                     })()]" />
-                <div :style="`background-image: url(${bgPrimary})`" :class="[`absolute top-0 left-0 w-screen h-screen -z-20 transition-all duration-700 ease-in-out
+                <div :style="`background-image: url(${currentImage})`" :class="[`absolute top-0 left-0 w-screen h-screen -z-20 transition-all duration-700 ease-in-out
                     bg-[size:120vmax]
                     opacity-20 group-hover:opacity-15 group-hover:bg-[size:110vmax]`, (() => {
                         switch (currentPage) {
