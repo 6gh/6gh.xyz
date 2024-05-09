@@ -16,6 +16,9 @@ devDependencies:
   '@nuxtjs/color-mode':
     specifier: ^3.3.3
     version: 3.3.3
+  '@nuxtjs/google-fonts':
+    specifier: ^3.2.0
+    version: 3.2.0
   '@nuxtjs/tailwindcss':
     specifier: ^6.11.4
     version: 6.11.4
@@ -1232,6 +1235,17 @@ packages:
     resolution: {integrity: sha512-t6QM/tj1d/53xQ9JznNVIaqIfQWhjHRzNt5VqTxNeAJWG0HCdiHVezkUTMahPUgUbEJnBrtCoquUYwpyFhNF+Q==}
     dependencies:
       '@nuxt/kit': 3.11.1
+      pathe: 1.1.2
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
+    dev: true
+
+  /@nuxtjs/google-fonts@3.2.0:
+    resolution: {integrity: sha512-cGAjDJoeQ2jm6VJCo4AtSmKO6KjsbO9RSLj8q261fD0lMVNMZCxkCxBkg8L0/2Vfgp+5QBHWVXL71p1tiybJFw==}
+    dependencies:
+      '@nuxt/kit': 3.11.1
+      google-fonts-helper: 3.6.0
       pathe: 1.1.2
     transitivePeerDependencies:
       - rollup
@@ -3852,6 +3866,15 @@ packages:
       path-type: 5.0.0
       slash: 5.1.0
       unicorn-magic: 0.1.0
+    dev: true
+
+  /google-fonts-helper@3.6.0:
+    resolution: {integrity: sha512-ReantWd/l8dedKqTYjvqaQ55rAl/rbRqWL5VXHNXtGwIhMX4N8VNA7V19drr7xiv5G3pzlYID0K4FauvGqnWEg==}
+    dependencies:
+      deepmerge: 4.3.1
+      hookable: 5.5.3
+      ofetch: 1.3.4
+      ufo: 1.5.3
     dev: true
 
   /graceful-fs@4.2.11:
