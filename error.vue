@@ -2,6 +2,8 @@
 const error = useError();
 const image404 = useCdn("/images/404.png");
 const imageGeneric = useCdn("/images/error.png");
+
+console.log(error);
 </script>
 
 <template>
@@ -27,4 +29,3 @@ const imageGeneric = useCdn("/images/error.png");
         </template>
     </NuxtLayout>
 </template>
-  

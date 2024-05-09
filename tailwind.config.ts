@@ -37,7 +37,7 @@ export default <Partial<Config>>{
       "autumn",
       "nord",
     ],
-    darkMode: "main",
+    darkMode: "amoled",
   },
   plugins: [require("daisyui")],
 };
