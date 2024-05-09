@@ -29,21 +29,21 @@ definePageMeta({
                     <NuxtLink
                         class="w-full h-full transition-all group-hover:opacity-60 group-hover:scale-90 group-hover:hover:opacity-100 group-hover:hover:scale-100"
                         to="/contact">
-                        MIDIs
+                        Contact
                     </NuxtLink>
                 </li>
                 <li @mouseenter="currentPage = '3'" class="py-4">
                     <NuxtLink
                         class="w-full h-full transition-all group-hover:opacity-60 group-hover:scale-90 group-hover:hover:opacity-100 group-hover:hover:scale-100"
                         to="/midis">
-                        Portfolio
+                        MIDIs
                     </NuxtLink>
                 </li>
                 <li @mouseenter="currentPage = '4'" class="py-4">
                     <NuxtLink
                         class="w-full h-full transition-all group-hover:opacity-60 group-hover:scale-90 group-hover:hover:opacity-100 group-hover:hover:scale-100"
-                        to="/blog">
-                        Blog
+                        to="/projects">
+                        Portfolio
                     </NuxtLink>
                 </li>
                 <div :class="[`absolute top-0 left-0 w-screen h-screen -z-10 transition-all duration-700 ease-in-out
