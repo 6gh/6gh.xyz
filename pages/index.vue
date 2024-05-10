@@ -31,7 +31,7 @@ const cardTexts: {
     },
     "About": {
         title: "About",
-        text: "I'm a 16 year old developer who loves to make things. I'm currently working on a few projects, including a Discord bot and a website for a friend."
+        text: "I'm a 18 year old developer who loves to make things. I'm currently working on a few projects, including a Discord bot and multiple websites."
     },
     "Contact": {
         title: "Contact",
@@ -302,8 +302,8 @@ useHead({
             </ul>
         </div>
 
-        <div class="w-10/12 bg-base-300 my-auto flex px-6 py-8 text-primary-content">
-            <div class="flex flex-col gap-4 w-full">
+        <div class="w-10/12 bg-base-300 my-auto xl:flex px-6 py-8 text-primary-content hidden">
+            <div class="flex flex-col gap-4 w-full min-h-48">
                 <h1 class="text-4xl">
                     {{ cardTitle }}
                 </h1>
