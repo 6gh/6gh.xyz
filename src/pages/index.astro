@@ -1,0 +1,254 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="6gh.dev"
+  description="Welcome to 6gh's official website, where I host information for all of my projects and more!"
+>
+  <div class="absolute top-0 left-0 opacity-60 dark:opacity-30 blur-lg -z-10 overflow-hidden w-full h-full">
+    <img class="main-bg-image shown" src="/images/annie-spratt-Ptj8t_TXjdg-unsplash.jpg" alt="">
+    <img class="main-bg-image hide" src="/images/gabriel-vasiliu-rhF57wRRctg-unsplash.jpg" alt="" loading="lazy">
+    <img class="main-bg-image hide" src="/images/james-trenda-6B8hJmJL7MI-unsplash.jpg" alt="" loading="lazy">
+    <img class="main-bg-image hide" src="/images/steve-johnson-4Ymslk3Iihc-unsplash.jpg" alt="" loading="lazy">
+    <img class="main-bg-image prev" src="/images/taylor-friehl-X7hWAQTHWoo-unsplash.jpg" alt="" loading="lazy">
+  </div>
+  <main class="content-container h-[80vh]">
+    <div class="flex flex-col gap-4 justify-center items-center h-full">
+      <h1 class="text-4xl font-semibold">
+        hi, im 
+        <div class="relative inline-block group">
+          <span class="name-text relative text-accent-600">6gh</span>
+          <span class="name-text absolute text-accent-800 blur-xl group-hover:blur-lg transition-all duration-500 -z-10 inset-0">6gh</span>
+        </div>
+      </h1>
+      <p class="text-2xl font-body">
+        i am
+        <span id="i-am-text" class="text-secondary-700">
+          a web developer
+        </span>
+
+        <script is:inline>
+          const iAmTextImages = {
+            "a web developer": "/images/annie-spratt-Ptj8t_TXjdg-unsplash.jpg",
+            "a programmer": "/images/gabriel-vasiliu-rhF57wRRctg-unsplash.jpg",
+            "a black midi enthusiast": "/images/james-trenda-6B8hJmJL7MI-unsplash.jpg",
+            "a FOSS advocate": "/images/steve-johnson-4Ymslk3Iihc-unsplash.jpg",
+            "an arch user btw": "/images/taylor-friehl-X7hWAQTHWoo-unsplash.jpg",
+          };
+          const iAmTexts = Object.keys(iAmTextImages);
+
+          let currentIAmIndex = iAmTexts.length - 1;
+        
+          console.log("running script");
+
+          function randomLetter() {
+            const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            return chars.charAt(Math.floor(Math.random() * chars.length));
+          }
+
+          function resizeText(text) {
+            return new Promise(async (resolve) => {
+              const span = document.getElementById("i-am-text");
+
+              if (span === null) {
+                return;
+              }
+              let finalTextSize = text.length;
+              let currentTextSize = span.textContent.length;
+
+              console.log("resizing text");
+              
+              const resizeTextInterval = setInterval(() => {
+                if (currentTextSize !== finalTextSize) {
+                  if (currentTextSize < finalTextSize) {
+                    // if the current text size is less than the final text size, add a random letter
+                    currentTextSize += 1/2;
+                  } else {
+                    // if the current text size is greater than the final text size, remove a random letter
+                    currentTextSize -= 1/2;
+                  }
+
+                  // set all the text to random letters
+                  span.textContent = Array(Math.floor(currentTextSize)).fill(0).map(randomLetter).join("");
+                } else {
+                  clearInterval(resizeTextInterval);
+                  return resolve();
+                }
+              }, 25);
+            })
+          }
+
+          function animateGlitchyText(text) {
+            return new Promise(async (resolve) => {
+              const span = document.getElementById("i-am-text");
+
+              if (span === null) {
+                return;
+              }
+
+              let iterations = 0;
+
+              console.log("changing text");
+
+              const glitchyRevealInterval = setInterval(() => {
+                if (iterations >= text.length) {
+                  span.textContent = text;
+                  clearInterval(glitchyRevealInterval);
+                  return resolve();
+                }
+
+                span.textContent = text
+                  .split("")
+                  .map((char, index) => {
+                    if (index <= iterations) {
+                      return char;
+                    } else {
+                      return randomLetter();
+                    }
+                  })
+                  .join("");
+
+                iterations += 1/3;
+              }, 30);
+            })
+          }
+        
+          async function changeIAmText() {
+            const iAmText = document.getElementById("i-am-text");
+        
+            if (iAmText === null) {
+              return;
+            }
+        
+            if (iAmText.textContent === "") {
+              animateGlitchyText(iAmTexts[0]);
+            }
+        
+            currentIAmIndex = (currentIAmIndex + 1) % iAmTexts.length;
+
+            // change image here
+            const images = document.querySelectorAll(".main-bg-image");
+            console.log(images);
+            images.forEach((image) => {
+              image.classList.remove("shown");
+              image.classList.add("hide");
+              image.classList.remove("prev");
+            });
+            const imageIndex = iAmTexts.indexOf(iAmTexts[currentIAmIndex]);
+            // set prev and current images
+            images[(imageIndex - 1 + images.length) % images.length].classList.add("prev");
+            images[imageIndex].classList.remove("hide");
+            images[imageIndex].classList.add("shown");
+
+            await resizeText(iAmTexts[currentIAmIndex]);
+            await animateGlitchyText(iAmTexts[currentIAmIndex]);
+            console.log("done");
+            setTimeout(changeIAmText, 5000);
+          }
+        
+          changeIAmText();
+        </script>
+      </p>
+      <div class="btn-group">
+        <a href="/about" class="btn btn-primary">About Me</a>
+        <a href="/portfolio" class="btn btn-secondary">Portfolio</a>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style lang="scss">
+  .main-bg-image {
+    @apply aspect-video w-full h-full absolute top-0 left-0;
+  }
+
+  .main-bg-image.hide {
+    @apply -z-10
+  }
+
+  .main-bg-image.prev {
+    z-index: 0;
+  }
+
+  .main-bg-image.shown {
+    z-index: 1;
+    animation: showCircle 3s forwards;
+  }
+
+  @keyframes showCircle {
+    0% {
+      // show circle clip path at random location
+      clip-path: circle(0%);
+    }
+    100% {
+      clip-path: circle(100%);
+    }
+  }
+  @keyframes hideCircle {
+    0% {
+      display: block;
+    }
+    100% {
+      display: none;
+    }
+  }
+</style>
+
+<script is:inline>
+  let secretRevealed = false;
+
+  const susify = () => {
+    if (!secretRevealed) {
+      const texts = document.querySelectorAll(".name-text");
+
+      texts.forEach((text) => {
+        text.textContent = "snowydqys";
+      });
+
+      const audio = new Audio("/sus.mp3");
+      audio.play();
+
+      secretRevealed = true;
+    }
+    // else {
+    //   const texts = document.querySelectorAll(".name-text");
+
+    //   texts.forEach((text) => {
+    //     text.textContent = "6gh";
+    //   });
+
+    //   const audio = new Audio("/unsus.mp3");
+    //   audio.play();
+
+    //   secretRevealed = false;
+    // };
+  }
+
+  let sequenceStep = 0;
+  let sequenceRequired = [
+    "ArrowUp",
+    "ArrowUp",
+    "ArrowDown",
+    "ArrowDown",
+    "ArrowLeft",
+    "ArrowRight",
+    "ArrowLeft",
+    "ArrowRight",
+    "b",
+    "a",
+  ];
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === sequenceRequired[sequenceStep]) {
+      sequenceStep++;
+
+      if (sequenceStep === sequenceRequired.length) {
+        susify();
+        sequenceStep = 0;
+      }
+    } else {
+      sequenceStep = 0;
+    }
+  });
+</script>

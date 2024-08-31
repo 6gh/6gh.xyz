@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  src: ImageMetadata | Promise<{
+    default: ImageMetadata;
+  }>;
+  alt?: string;
+  previewText?: string;
+  width?: number | `${number}`;
+  height?: number | `${number}`;
+}
+
+const { src, alt, previewText, width, height } = Astro.props;
+---
+
+<div class="flex flex-col gap-0">
+  <Image
+    class="m-0"
+    src={src}
+    alt={alt || previewText || "Couldn't load image"}
+    width={width}
+    height={height}
+  />
+  <p class="text-sm text-center text-text-950 opacity-60 italic">{previewText || alt || "An image"}</p>
+</div>

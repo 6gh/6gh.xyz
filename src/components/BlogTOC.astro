@@ -1,0 +1,65 @@
+---
+import BlogTOCHeading from "./BlogTOCHeading.astro";
+
+const { headings } = Astro.props;
+
+interface ITOC {
+  slug: string;
+  text: string;
+  children?: ITOC[];
+}
+
+interface Heading { 
+  depth: number;
+  slug: string;
+  text: string;
+  subheadings: Heading[];
+}
+
+function buildToc(headings: Heading[]) {
+  const toc: Heading[] = [];
+  const parentHeadings = new Map();
+  headings.forEach((h) => {
+    const heading = { ...h, subheadings: [] };
+    parentHeadings.set(heading.depth, heading);
+    if (heading.depth === 1) {
+      toc.push(heading);
+    } else {
+      parentHeadings.get(heading.depth - 1)?.subheadings.push(heading);
+    }
+  });
+  return toc;
+}
+
+const createTOC = (headings: { depth: number; slug: string; text: string; }[]): ITOC[] => {
+  const toc: ITOC[] = [];
+  let parents: ITOC[] = [];
+  headings.forEach((heading) => {
+    const item: ITOC = { slug: heading.slug, text: heading.text };
+    if (heading.depth === 1) {
+      toc.push(item);
+      parents = [item];
+    } else {
+      let parent = parents[heading.depth - 2];
+      if (!parent.children) {
+        parent.children = [];
+      }
+      parent.children.push(item);
+      parents[heading.depth - 1] = item;
+    }
+  });
+  return toc;
+};
+
+let toc = createTOC(headings);
+let tocwd = buildToc(headings);
+---
+
+<nav class="flex flex-col gap-2 sticky top-1 bg-background-100 h-fit w-96 rounded-lg p-4">
+  <p class="font-bold">
+    Table of Contents
+  </p>
+  <ul class="flex flex-col list-disc list-inside prose prose-a:text-text-950 prose-li:m-0 prose-ul:m-0">
+    {tocwd.map((heading) => <BlogTOCHeading heading={heading} />)}
+  </ul>
+</nav>

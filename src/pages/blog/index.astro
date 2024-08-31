@@ -1,0 +1,33 @@
+---
+import BlogCard from "../../components/BlogCard.astro";
+import Layout from "../../layouts/Layout.astro";
+const allPosts = await Astro.glob('./post/*.mdx');
+---
+
+<Layout
+  title="Blog - 6gh.dev"
+  description="Read the latest blog posts from 6gh!"
+  path="blog"
+>
+  <main
+    class="content-container w-full py-4 font-body"
+  >
+    <h1 class="text-3xl font-bold">
+      Blog
+    </h1>
+    <p>
+      Welcome to my blog! Here, I'll be posting about various topics, including web development, programming, and more. Check back often for new posts!
+    </p>
+
+    <div class="flex w-full justify-evenly flex-wrap gap-4 py-6">
+      {allPosts.map(post => <BlogCard post={post} />)}
+      {allPosts.map(post => <BlogCard post={post} />)}
+      {allPosts.map(post => <BlogCard post={post} />)}
+      {allPosts.map(post => <BlogCard post={post} />)}
+      {allPosts.map(post => <BlogCard post={post} />)}
+      {allPosts.map(post => <BlogCard post={post} />)}
+      {allPosts.map(post => <BlogCard post={post} />)}
+      {allPosts.map(post => <BlogCard post={post} />)}
+    </div>
+  </main>
+</Layout>

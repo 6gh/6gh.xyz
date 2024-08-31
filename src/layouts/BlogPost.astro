@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+import Layout from "./Layout.astro";
+import BlogTOC from "../components/BlogTOC.astro";
+
+const { frontmatter, headings } = Astro.props;
+---
+
+<Layout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  path={frontmatter.url}
+>
+  <article class="content-container">
+    <Image
+      class="w-full h-96 fade-out"
+      src={frontmatter.image.url}
+      alt={frontmatter.image.alt}
+      width="384"
+      height="384"
+    />
+    <header class="font-heading flex flex-col gap-1 pt-4">
+      <h3 class="italic opacity-60">{new Date(frontmatter.pubDate).toLocaleDateString()}</h3>
+      <h1 class="text-2xl font-bold">{frontmatter.title}</h1>
+      <h2 class="text-lg">{frontmatter.description}</h2>
+      <ul class="flex gap-1">
+        {frontmatter.tags.map((tag: string) => (
+          <li><a href={`/blog/tag/${tag}`} class="btn btn-sm">{tag}</a></li>
+        ))}
+      </ul>
+    </header>
+
+    <hr class="border-t-2 border-background-400 my-12" />
+
+    <main
+      class="grid grid-cols-[1fr_auto] gap-3"
+    >
+      <div 
+        class="min-w-full prose dark:prose-invert
+               prose-styles"
+      >
+        <slot />
+      </div>
+      <BlogTOC headings={headings} />
+    </main>
+  </article>
+</Layout>
+
+<style lang="scss">
+  .fade-out {
+    -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0.4)));
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.4));
+  }
+</style>
