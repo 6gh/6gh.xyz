@@ -1,6 +1,10 @@
-# [6gh.xyz](https://6gh.xyz)
+# Old Svelte Version
 
-[![pages-build-deployment](https://github.com/6gh/6gh.xyz/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/6gh/6gh.xyz/actions/workflows/pages/pages-build-deployment)
+This branch holds the code for an old version of my website using the SvelteKit framework. This has since been sunset and overshadowed by my new version using Astro, which you can find in the [main branch](https://github.com/6gh/6gh.xyz/tree/main) of this repository.
+
+---
+
+# [6gh.xyz](https://6gh.xyz)
 
 This is the repository for my website. The entire source code can be found here for it.
 
